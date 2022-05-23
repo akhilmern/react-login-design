@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with Login Design Sample
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +68,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+![image](https://user-images.githubusercontent.com/46927802/169760324-9bfe55a4-c369-42ba-9331-cd47eec3c3b2.png)
+
