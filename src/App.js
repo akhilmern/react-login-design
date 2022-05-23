@@ -2,25 +2,29 @@ import headerBackground from "./header-background.png";
 import "./App.css";
 import { useState } from "react";
 import { AppToaster } from "./components/toaster";
+import { Icon } from "@blueprintjs/core";
 
 function App() {
-  const [user,setUser] = useState({userName:'',password:''})
+  const [user, setUser] = useState({ userName: "", password: "" });
 
   const handleLogin = () => {
-    console.log(user)
-    if(!user.userName && !user.password){
-      AppToaster.show({ message: "User name and password are mandatory fields" });
-    }else{
-      !user.userName && AppToaster.show({ message: "User name is a mandatory field" });
-      !user.password && AppToaster.show({ message: "Password is a mandatory field" });
+    console.log(user);
+    if (!user.userName && !user.password) {
+      AppToaster.show({
+        message: "User name and password are mandatory fields",
+      });
+    } else {
+      !user.userName &&
+        AppToaster.show({ message: "User name is a mandatory field" });
+      !user.password &&
+        AppToaster.show({ message: "Password is a mandatory field" });
     }
-  }
+  };
 
-  const handleInput = (evt,key) => {
-    console.log(evt.target.value)
-    setUser({...user,[key]:evt.target.value})
-  }
-
+  const handleInput = (evt, key) => {
+    console.log(evt.target.value);
+    setUser({ ...user, [key]: evt.target.value });
+  };
 
   return (
     <div className="container flex-center">
@@ -52,7 +56,11 @@ function App() {
                 <p>Username</p>
               </span>
 
-              <input onChange={(evt ) => handleInput(evt ,'userName')} placeholder="Enter username" value={user.userName}/>
+              <input
+                onChange={(evt) => handleInput(evt, "userName")}
+                placeholder="Enter username"
+                value={user.userName}
+              />
             </div>
 
             <div className="form-group flex-start">
@@ -60,20 +68,32 @@ function App() {
                 <p>Password</p>
               </span>
 
-              <input onChange={(evt ) => handleInput(evt ,'password')} placeholder="Enter password"  value={user.password} type="password" />
+              <input
+                onChange={(evt) => handleInput(evt, "password")}
+                placeholder="Enter password"
+                value={user.password}
+                type="password"
+              />
             </div>
 
             <span className="remember-me flex-row-center">
               <input type="checkbox" />
               <p className="label-remember-me flex-center">Remember me</p>
             </span>
-            <button onClick={handleLogin} className="login flex-center" type="button">
+            <button
+              onClick={handleLogin}
+              className="login flex-center"
+              type="button"
+            >
               <span>Log In</span>
             </button>
           </div>
 
           <span className="forgot-password flex-center">
-            <span className="flex-center"> Forgot your password? </span>
+            <p className="forget-text">
+              {" "}
+              <Icon icon={"lock"} size={11} /> Forgot your password?{" "}
+            </p>
           </span>
         </div>
       </div>
@@ -83,8 +103,6 @@ function App() {
           <p className="box-height">Don't have an account? Sign up now</p>
         </span>
       </div>
-
-
     </div>
   );
 }

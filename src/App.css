@@ -52,7 +52,7 @@
   /* Text_Default */
   gap: 10px;
   width: 155px;
-  padding-left: 25px;
+  padding-left: 11px;
 }
 
 .box-height {
@@ -74,7 +74,7 @@
   font-size: 16.25px;
   line-height: 20px;
   color: #556ee6;
-  padding-left: 32px;
+  padding-left: 29px;
   margin-bottom: 10px;
   margin-top: 30px;
 }
@@ -140,6 +140,7 @@
   color: #8f9499;
   font-size: 13px;
   line-height: 20px;
+  padding-bottom: 10px;
 }
 
 .remember-me input {
@@ -152,6 +153,7 @@
 
 .label-remember-me {
   gap: 10px;
+  padding-top: 13px;
 }
 
 .login {
@@ -175,12 +177,14 @@
   padding-top: 30px;
 }
 
-.forgot-password span {
+.forgot-password span,
+p {
   /* Text_Default */
   gap: 10px;
   font-size: 13px;
   line-height: 20px;
   color: #8f9499;
+  padding-bottom: 2px;
 }
 
 .sign-up {
