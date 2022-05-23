@@ -1,38 +1,202 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex-center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.flex-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container {
+  gap: 20px;
+  width: 456px;
+  margin: auto;
+  margin-top: 65px;
+}
+
+.card {
+  /* Card */
+  width: 100%;
+  box-shadow: 0px 12px 24px rgba(18, 38, 63, 0.05);
+  border-radius: 4px;
+}
+
+.login-header {
+  /* Header */
+  width: 100%;
+  background: rgba(85, 109, 230, 0.25);
+  border-radius: 4px 4px 0px 0px;
+}
+
+.login-profile-image {
+  /* Profile_Container */
+  position: absolute;
+  top: 151px;
+}
+
+.header-left-section {
+  width: 275px;
+  float: left;
+}
+
+.sign-up-text {
+  /* Text_Default */
+  gap: 10px;
+  width: 121px;
+  padding-left: 25px;
+}
+
+.box-height {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #8f9499;
+}
+
+.sign-up-text p {
+  /* Sign in to continue */
+  color: #556ee6;
+  margin-top: 0px;
+}
+
+.welcome-text p {
+  /* Welcome Back ! */
+  font-weight: 600;
+  font-size: 16.25px;
+  line-height: 20px;
+  color: #556ee6;
+  padding-left: 32px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+ .header-right-section img {
+  /* Login Image */
+  /* background: url(profile-img.png); */
+} 
+
+.profile-pic {
+  /* Profile_Image */
+  box-sizing: border-box;
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  left: 24px;
+  border: 3px solid #f8f8fb;
+  border-radius: 72px;
+}
+
+.profile-pic span {
+  /* Profile_Image */
+  z-index: 9;
+  border-radius: inherit;
+  position: absolute;
+  width: 66px;
+  height: 72px;
+  background: url(profile-pic.png);
+}
+
+.content {
+  /* Content */
+  padding: 30px;
+  margin-top: 35px;
+}
+
+.label {
+  /* Label */
+  width: 68px;
+  align-self: flex-start;
+}
+
+.label p {
+  width: 68px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  color: #8f9499;
+}
+
+.form-group input {
+  box-sizing: border-box;
+  width: 395px;
+  height: 36px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  align-self: center;
+  padding-left: 10px;
+}
+
+.remember-me {
+  /* Checkbox_Field */
+  gap: 8px;
+  color: #8f9499;
+  font-size: 13px;
+  line-height:20px;
+}
+
+.remember-me input {
+  /* Checkbox */
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid #adb5bd;
+  border-radius: 4px;
+}
+
+.label-remember-me {
+  gap: 10px;
+}
+
+.login {
+  /* Login Button */
+  cursor: pointer;
+  padding: 8px 12px;
+  gap: 10px;
+  width: 395px;
+  background: #556ee6;
+  border-radius: 4px;
+  border:none;
+}
+
+.login span {
+  /* Log In Text*/
+  color: #ffffff;
+}
+
+.forgot-password {
+  /* Forgot_Password */
+  padding: 30px;
+}
+
+.forgot-password span {
+  /* Text_Default */
+  gap: 10px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #8f9499;
+}
+
+.sign-up {
+  /* Sign_up_Container */
+  gap: 16px;
+}
+
+.sign-up span {
+  /* Text_Default */
+  gap: 10px;
+  text-align: center;
+}
+
+.sign-up span p {
+  /* Don’t have an account ? Signup now */
+  width: 242px;
+  color: #495057;
 }
