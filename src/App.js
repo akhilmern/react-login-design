@@ -1,76 +1,91 @@
-import headerBackground from './header-background.png';
-import './App.css';
+import headerBackground from "./header-background.png";
+import "./App.css";
+import { useState } from "react";
+import { AppToaster } from "./components/toaster";
 
 function App() {
+  const [user,setUser] = useState({userName:'',password:''})
+
+  const handleLogin = () => {
+    console.log(user)
+    if(!user.userName && !user.password){
+      AppToaster.show({ message: "User name and password are mandatory fields" });
+    }else{
+      !user.userName && AppToaster.show({ message: "User name is a mandatory field" });
+      !user.password && AppToaster.show({ message: "Password is a mandatory field" });
+    }
+  }
+
+  const handleInput = (evt,key) => {
+    console.log(evt.target.value)
+    setUser({...user,[key]:evt.target.value})
+  }
+
+
   return (
-    
-<div class="container flex-center">
-  <div class="card">
-    <div class="login-header">
-      <span class="header-left-section box-height">
- 
-        <span class="welcome-text">
-          <p>Welcome Back!</p>
-        </span>
-        <span class="sign-up-text flex-center">
-            <p class="box-height">Sign in to continue</p>
-        </span>
-      </span>
-
-      <span class="header-right-section">
-        <img  src={headerBackground} alt="fireSpot"/>
-
-      </span>
-    </div>
-
-    <div class="login-profile-image">
-      <span class="profile-pic">
-        <span></span>
-      </span>
-    </div>
-
-    <div class="content">
-      <div class="flex-start">
-        <div class="form-group flex-start">
-          <span class="label flex-center">
-            <p>Username</p>
+    <div className="container flex-center">
+      <div className="card">
+        <div className="login-header">
+          <span className="header-left-section box-height">
+            <span className="welcome-text">
+              <p>Welcome Back!</p>
+            </span>
+            <span className="sign-up-text flex-center">
+              <p className="box-height">Sign in to continue</p>
+            </span>
           </span>
-
-          <input placeholder="Enter username" />
+          <span className="header-right-section">
+            <img src={headerBackground} alt="fireSpot" />
+          </span>
         </div>
 
-        <div class="form-group flex-start">
-          <span class="label">
-            <p>Password</p>
+        <div className="login-profile-image">
+          <span className="profile-pic">
+            <span></span>
           </span>
-
-          <input placeholder="Enter password" type="password" />
         </div>
 
-        <span class="remember-me flex-row-center">
-          <input type="checkbox" />
-          <p class="label-remember-me flex-center">Remember me</p>
-        </span>
-        <button class="login flex-center" type="button">
-          <span>Log In</span>
-        </button>
+        <div className="content">
+          <div className="flex-start">
+            <div className="form-group flex-start">
+              <span className="label flex-center">
+                <p>Username</p>
+              </span>
+
+              <input onChange={(evt ) => handleInput(evt ,'userName')} placeholder="Enter username" value={user.userName}/>
+            </div>
+
+            <div className="form-group flex-start">
+              <span className="label">
+                <p>Password</p>
+              </span>
+
+              <input onChange={(evt ) => handleInput(evt ,'password')} placeholder="Enter password"  value={user.password} type="password" />
+            </div>
+
+            <span className="remember-me flex-row-center">
+              <input type="checkbox" />
+              <p className="label-remember-me flex-center">Remember me</p>
+            </span>
+            <button onClick={handleLogin} className="login flex-center" type="button">
+              <span>Log In</span>
+            </button>
+          </div>
+
+          <span className="forgot-password flex-center">
+            <span className="flex-center"> Forgot your password? </span>
+          </span>
+        </div>
       </div>
 
-      <span class="forgot-password flex-center">
-        <span class="flex-center"> Forgot your password? </span>
-      </span>
+      <div className="sign-up flex-center">
+        <span>
+          <p className="box-height">Don't have an account? Sign up now</p>
+        </span>
+      </div>
+
+
     </div>
-  </div>
-
-  <div class="sign-up flex-center">
-    <span>
-      <p class="box-height">
-        Don't have an account? Sign up now
-      </p>
-    </span>
-  </div>
-</div>
-
   );
 }
 
